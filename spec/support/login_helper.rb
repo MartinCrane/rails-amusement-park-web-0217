@@ -13,6 +13,7 @@ module LoginHelper
     fill_in("user[tickets]", :with => "15")
     fill_in("user[password]", :with => "password")
     click_button('Create User')
+
   end
 
   def visit_signin

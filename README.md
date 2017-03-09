@@ -1,3 +1,15 @@
+rails g model Attraction name:string tickets:integer nausea_rating:integer happiness_rating:integer min_height:integer --no-test-framework
+
+rails g model Ride user_id:integer attraction_id:integer --no-test-framework
+
+rails g model User name:string password:string nausea:integer happiness:integer tickets:integer height:integer --no-test-framework
+
+rails generate controller User
+rails generate controller Attraction
+
+
+
+
 # Rails Amusement Park
 
 ## Objectives

@@ -1,0 +1,26 @@
+<% if !@user.admin %>
+
+  <% @attractions.each do |s|%>
+  <%= link_to "Go on #{s.name}", s %>
+  <br />
+  <%= s.name %>
+  <br />
+  <% end %>
+
+<% else %>
+
+  <br />
+  <h1><%= "You are an ADMIN!!!" %></h1>
+
+  <%= link_to 'New Attraction', 'attractions/new' %>
+  <% @attractions.each do |d| %>
+    <h1><%=d.name%></h1>
+    <br />
+    <%= link_to "Show #{d.name}", d %>
+    <br />
+  
+    <%= link_to "Edit Attraction", "attractions/#{d.id}/edit" %>
+    <br />
+  <%end %>
+
+<%end%>

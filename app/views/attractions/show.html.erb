@@ -1,0 +1,16 @@
+<h2>Name: <%= @attraction.name %></h2>
+<h2>Tix: <%= @attraction.tickets %></h2>
+<h2>Happy: <%= @attraction.happiness_rating %></h2>
+<h2>Stomach: <%= @attraction.nausea_rating %></h2>
+<h2>Height: <%= @attraction.min_height %></h2>
+
+<%= form_for @attraction, url: '/ride', method: :post do |f| %>
+
+  <%= f.label "Go on #{@attraction.name}" %>
+  <%= f.button "Go on #{@attraction.name}" %>
+  <%= f.hidden_field :id %>
+  <%= f.submit "Go on this ride"%>
+  <% if @user.admin %>
+  <%= link_to "Edit Attraction", "#{@attraction.id}/edit" %>
+  <%end%>
+<% end %>
